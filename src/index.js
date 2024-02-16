@@ -1,3 +1,4 @@
+
 const { Client, IntentsBitField, Emoji, GuildMember, userMention, User } = require('discord.js');
 
 const client = new Client({
@@ -56,6 +57,4 @@ client.on('emojiCreate', () =>{
 });
 
 
-client.login(
-    'MTIwNzk2NzY4Njk0OTIxMjE3MA.GDRZRX.V9dwmh1yy-roEutVqAPGYf1Pha-xB2HKqlQBtg'
-);
+client.login('insert your bot's token here');
