@@ -57,4 +57,4 @@ client.on('emojiCreate', () =>{
 });
 
 
-client.login('insert your bot's token here');
+client.login("insert your bot's token here");
