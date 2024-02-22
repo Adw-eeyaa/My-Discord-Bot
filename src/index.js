@@ -1,4 +1,6 @@
+
 require('dotenv').config();
+
 const { Client, IntentsBitField, Emoji, GuildMember, userMention, User } = require('discord.js');
 
 const client = new Client({
@@ -70,6 +72,7 @@ if(message.author.username == "BRUHTHER"){
     
 
 });
+
 
 
 
