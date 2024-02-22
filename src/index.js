@@ -1,4 +1,6 @@
 
+require('dotenv').config();
+
 const { Client, IntentsBitField, Emoji, GuildMember, userMention, User } = require('discord.js');
 
 const client = new Client({
@@ -11,13 +13,18 @@ const client = new Client({
         IntentsBitField.Flags.GuildModeration,
         IntentsBitField.Flags.GuildPresences,
         IntentsBitField.Flags.MessageContent,
+       ,
+       
     ],
 });
+
+
+
 
 client.on('ready', (c)=>{
     console.log('eeyaa is active');
 });
-client.on('messageCreate', (message) =>{
+/*client.on('messageCreate', (message) =>{
     const channel = client.channels.cache.get("Your channel ID");
     if(message.content == 'L'){
         channel.message.fetch({ limit: 100 }).then(messages => {
@@ -30,16 +37,16 @@ client.on('messageCreate', (message) =>{
 
     }
     
-});
+});*/
 client.on('messageDelete', (message) => {
     message.channel.send(`IK WHAT U DELETED = ${message.content}`);
 
 });
-client.on('message', (userMention)=>{
+/*client.on('message', (userMention)=>{
     message.channel.send("<@" + userMention + ">");
     
 
-});
+});*/
 client.on('messageCreate', (message) =>{
     console.log(message.content);
     if(message.author.bot){
@@ -51,10 +58,22 @@ client.on('messageCreate', (message) =>{
     
 
 });
-client.on('emojiCreate', () =>{
+/*client.on('emojiCreate', () =>{
     message.reply("i see that");
     
+});*/
+
+client.on('messageCreate', message =>{
+if(message.author.username == "BRUHTHER"){ 
+     message.channel.send(`${message.author}`);
+}
+    
+
+    
+
 });
 
 
-client.login("insert your bot's token here");
+
+
+client.login(process.env.TOKEN);
